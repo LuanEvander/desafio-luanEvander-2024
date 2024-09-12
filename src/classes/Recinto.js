@@ -17,7 +17,7 @@ class Recinto {
 
         // Quando o animal é de espécie diferente, é necessário um espaço adicional
         let especiesPresentes = new Set(this.animais.map(a => a.especie));
-        if (especiesPresentes.size > 0) {
+        if (especiesPresentes.size > 1 || !especiesPresentes.has(animal.especie)) {
             espacoNecessario += 1; // Considerar espaço extra
         }
 
