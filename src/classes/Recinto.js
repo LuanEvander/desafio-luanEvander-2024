@@ -17,7 +17,7 @@ class Recinto {
 
         // Quando o animal é de espécie diferente, é necessário um espaço adicional
         let especiesPresentes = new Set(this.animais.map(a => a.especie));
-        if (especiesPresentes.size > 1 || !especiesPresentes.has(animal.especie)) {
+        if (especiesPresentes.size > 0 && !especiesPresentes.has(animal.especie)) {
             espacoNecessario += 1; // Considerar espaço extra
         }
 
@@ -42,7 +42,7 @@ class Recinto {
 
         // Um macaco não se sente confortável sem outro animal no recinto, seja da mesma ou outra espécie
         if (animal.especie === 'MACACO') {
-            if (this.animais.length === 0 || !especiesPresentes.size > 0) {
+            if (this.animais.length === 0) {
                 return false;
             }
         }
