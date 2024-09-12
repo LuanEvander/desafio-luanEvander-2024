@@ -42,7 +42,7 @@ class Recinto {
 
         // Um macaco não se sente confortável sem outro animal no recinto, seja da mesma ou outra espécie
         if (animal.especie === 'MACACO') {
-            if (this.animais.length === 0) {
+            if (this.animais.length === 0 || !especiesPresentes.size > 0) {
                 return false;
             }
         }
@@ -54,3 +54,5 @@ class Recinto {
         return this.animais.reduce((total, a) => total + (a.tamanho * a.quantidade), 0);
     }
 }
+
+export { Recinto };
