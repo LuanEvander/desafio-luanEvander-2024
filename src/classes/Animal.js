@@ -1,5 +1,7 @@
 class Animal {
-    constructor(especie) {
+    constructor(especie, quantidade) {
+        this.quantidade = quantidade;
+        
         switch (especie) {
             case 'LEAO':
                 this.especie = 'LEAO';
